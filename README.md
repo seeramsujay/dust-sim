@@ -1,19 +1,34 @@
-# 🌪️ DustVision AI: Tri-Modal Particulate Transport Simulator & Predictive Mitigation Engine
+<p align="center">
+  <img src="assets/logo.svg" alt="DustSim Logo" width="220" />
+</p>
 
-> Local-first 3D physical particle simulation and proactive mist-suppression autopilot.
+<h1 align="center">DustSim</h1>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Vite](https://img.shields.io/badge/Vite-5.x-blueviolet.svg?style=flat-square)](https://vitejs.dev/)
-[![React Three Fiber](https://img.shields.io/badge/R3F-8.x-blue.svg?style=flat-square)](https://docs.pmnd.rs/react-three-fiber)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-cyan.svg?style=flat-square)](https://tailwindcss.com/)
+<p align="center">
+  <strong>Interactive 3D Atmospheric Particle Transport Simulator &amp; Proactive Mist Suppression Autopilot in React Three Fiber.</strong>
+</p>
 
-DustVision AI is a high-fidelity, edge-native 3D physics simulator and active mitigation engine designed to minimize particulate pollution on industrial construction sites. By fusing real-time wind vectors, humidity data, and spatial particulate concentration metrics (PM2.5 and PM10), the simulator runs a proactive autopilot that pre-wets target sectors with high-pressure water mist sprinklers to intercept and suppress incoming dust plumes *before* air quality breaches critical thresholds.
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/Renderer-React_Three_Fiber-blue.svg?style=flat-square&logo=threedotjs" alt="R3F">
+  <img src="https://img.shields.io/badge/Bundler-Vite_5.x-blueviolet.svg?style=flat-square&logo=vite" alt="Vite">
+  <img src="https://img.shields.io/badge/Styles-Tailwind_CSS-cyan.svg?style=flat-square&logo=tailwindcss" alt="Tailwind CSS">
+  <a href="future.md"><img src="https://img.shields.io/badge/roadmap-future.md-blueviolet.svg?style=flat-square" alt="Roadmap"></a>
+</p>
+
+---
+
+## ⚡ Overview
+
+**DustSim** is a high-fidelity, edge-native 3D physics simulator and active mitigation engine designed to minimize particulate pollution on industrial construction sites.
+
+By fusing real-time wind vectors, humidity data, and spatial particulate concentration metrics (PM2.5 and PM10), the simulator runs a proactive autopilot that pre-wets target sectors with high-pressure water mist sprinklers to intercept and suppress incoming dust plumes *before* air quality breaches critical thresholds.
 
 ---
 
 ## 🏗️ Physical & Analytical Architecture
 
-DustVision AI couples a high-performance 3D WebGL particle simulator with a rule-based predictive actuation loop:
+DustSim couples a high-performance 3D WebGL particle simulator with a rule-based predictive actuation loop:
 
 ```mermaid
 flowchart TD
@@ -40,9 +55,9 @@ flowchart TD
 ## ⚡ Core Engineering Pillars
 
 *   **Tri-Modal Physics Simulation:** Simulates floating dust particles using custom WebGL shaders (`THREE.Points`) drifted dynamically by real-time variable wind angles and speed vectors.
-*   **Proactive Pre-Wetting Autopilot:** Rather than waiting for a full particulate breach, the system runs a predictive forecast. If PM levels are projected to spike, the autopilot triggers pre-wetting at 60% mist capacity to suppress rising dust in advance.
+*   **Proactive Pre-Wetting Autopilot:** Rather than waiting for a particulate threshold breach, the system evaluates forward forecasts. If PM levels are projected to spike, the autopilot triggers pre-wetting at 60% mist capacity.
 *   **High-Fidelity Fluid Mist Spray:** Renders realistic high-pressure water spray particles (`SprayDroplets`) that arc gracefully under simulated gravity and splash onto active construction sectors.
-*   **Live Spatial Telemetry Dashboard:** A gorgeous, glassmorphic UI styled for modern control centers, featuring active node feeds, real-time variance charts, and automated historical CSV logging.
+*   **Live Spatial Telemetry Dashboard:** Glassmorphic UI featuring active sensor feeds, real-time variance charts, and automated CSV logging.
 
 ---
 
@@ -59,37 +74,31 @@ flowchart TD
 
 ---
 
-## ⚙️ Specifications & Local Constraints
-
-*   **Low Computational Footprint:** Renders thousands of particles smoothly on low-power hardware (e.g., dual-core MacBook Air 2017 i5, 8GB RAM) with zero dedicated GPU requirements.
-*   **Memory Efficiency:** Average memory usage is under **40MB RAM** during full particle spray operations.
-*   **Zero-Lag WebGL Pipeline:** Combines canvas texture pooling and buffer attribute updates to maintain a solid **60 FPS** in-browser.
-
----
-
 ## 🚀 Quick Start (Under 60 Seconds)
 
-### 1. Install Project Dependencies
-Clone the repository and install all Node packages via npm:
-
+### 1. Install Dependencies
 ```bash
 git clone https://github.com/seeramsujay/dust-sim.git
 cd dust-sim
 npm install
 ```
 
-### 2. Run Vite Development Server
-Start the client application locally:
-
+### 2. Launch Development Server
 ```bash
 npm run dev
 ```
 
 ### 3. Deploy & Monitor
-Open the browser to `http://localhost:5173/` (or your active Vite port) to operate the live dashboard:
-*   **Deploy Sensor:** Dynamically provision and pin a new mock node anywhere on the spatial 3D grid.
+Open [http://localhost:5173/](http://localhost:5173/) to interact with the 3D dashboard:
+*   **Deploy Sensor:** Dynamically provision and pin a new sensor node anywhere on the spatial 3D grid.
 *   **Interactive Orbit Controls:** Left-click and drag to rotate the factory floor, right-click to pan, and scroll to zoom.
-*   **Export Analytics:** Instantly download the active run's sensor history as a CSV spreadsheet.
+*   **Export Analytics:** Download the active run's sensor history as a CSV file.
+
+---
+
+## 🔮 Engineering Roadmap
+
+To explore planned features including WebGPU compute shader acceleration, CityGML 3D digital twin terrain ingestion, and reinforcement learning water conservation, read [future.md](future.md).
 
 ---
 

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070C14" />
+      <stop offset="50%" stop-color="#0E1926" />
+      <stop offset="100%" stop-color="#04080E" />
+    </linearGradient>
+
+    <!-- 3D Particle Simulation Gradient -->
+    <linearGradient id="sim-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
+
+    <!-- Particulate Dust Warm Accent -->
+    <linearGradient id="dust-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EF4444" />
+    </linearGradient>
+
+    <linearGradient id="core-glow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.05" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="subtle-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" rx="160" fill="url(#bg-grad)" />
+  <rect width="796" height="796" x="2" y="2" rx="158" fill="none" stroke="#1E2E3B" stroke-width="2" />
+
+  <!-- 3D Coordinate Grid Reticle & Compass -->
+  <g opacity="0.15" stroke="#38BDF8" stroke-width="1.5">
+    <circle cx="400" cy="380" r="140" fill="none" stroke-dasharray="6 6" />
+    <circle cx="400" cy="380" r="230" fill="none" stroke-dasharray="8 8" />
+    <line x1="400" y1="100" x2="400" y2="660" stroke-dasharray="4 8" />
+    <line x1="120" y1="380" x2="680" y2="380" stroke-dasharray="4 8" />
+  </g>
+
+  <!-- Isometric Ground Plane Grid (3D Spatial Environment) -->
+  <g opacity="0.4" stroke="#06B6D4" stroke-width="2" fill="none">
+    <polygon points="400,240 620,350 400,460 180,350" fill="url(#core-glow)" stroke-width="4" filter="url(#glow)" />
+    <!-- Grid Internal Lines -->
+    <line x1="290" y1="295" x2="510" y2="405" />
+    <line x1="510" y1="295" x2="290" y2="405" />
+    <line x1="400" y1="240" x2="400" y2="460" stroke-dasharray="4 4" />
+    <line x1="180" y1="350" x2="620" y2="350" stroke-dasharray="4 4" />
+  </g>
+
+  <!-- 3D Particle Plume Dispersion (Floating THREE.Points) -->
+  <g fill="url(#dust-accent)" filter="url(#subtle-glow)">
+    <circle cx="280" cy="310" r="7" />
+    <circle cx="310" cy="270" r="9" />
+    <circle cx="340" cy="330" r="6" />
+    <circle cx="370" cy="290" r="8" />
+    <circle cx="300" cy="350" r="7" />
+    <circle cx="330" cy="370" r="5" />
+  </g>
+
+  <!-- High-Pressure Water Mist Spray Arcs (Fluid Droplets) -->
+  <g stroke="#22D3EE" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#subtle-glow)">
+    <!-- Sprinkler Arc 1 -->
+    <path d="M 520 280 Q 450 240, 360 300" stroke-dasharray="6 6" />
+    <!-- Sprinkler Arc 2 -->
+    <path d="M 520 280 Q 460 300, 380 340" />
+    <!-- Sprinkler Arc 3 -->
+    <path d="M 520 280 Q 470 360, 420 400" stroke-dasharray="8 6" />
+  </g>
+
+  <!-- Sprinkler Actuator Node on Ground -->
+  <circle cx="520" cy="280" r="14" fill="#10B981" stroke="#F8FAFC" stroke-width="3" filter="url(#glow)" />
+  <line x1="520" y1="280" x2="520" y2="350" stroke="#10B981" stroke-width="4" stroke-dasharray="3 3" />
+
+  <!-- Clean Mist Cloud Droplets Intercepting Dust -->
+  <g fill="#10B981" filter="url(#subtle-glow)">
+    <circle cx="390" cy="270" r="6" />
+    <circle cx="430" cy="320" r="7" />
+    <circle cx="410" cy="360" r="6" />
+    <circle cx="450" cy="380" r="5" />
+    <circle cx="400" cy="460" r="10" fill="#38BDF8" />
+  </g>
+
+  <!-- 3D Orbit Ring around Central Target -->
+  <ellipse cx="400" cy="350" rx="190" ry="70" fill="none" stroke="url(#sim-grad)" stroke-width="3" stroke-dasharray="10 8" />
+
+  <!-- Typography -->
+  <text x="400" y="685" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#F8FAFC" letter-spacing="4">
+    DUST<tspan fill="#10B981">SIM</tspan>
+  </text>
+  <text x="400" y="722" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#94A3B8" letter-spacing="3">
+    3D ATMOSPHERIC PARTICLE SIMULATOR &amp; R3F
+  </text>
+</svg>
